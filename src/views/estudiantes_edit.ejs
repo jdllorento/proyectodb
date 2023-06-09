@@ -1,0 +1,38 @@
+<% include partials/_header %>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/update/<%= data.id %>" method="post">
+                        <div class="form-group">
+                            <input type="text" name="documentoidentidad_e" value="<%= data.documentoidentidad_e %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="nombrecompleto" value="<%= data.nombrecompleto %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="correo_e" value="<%= data.correo_e %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="genero" value="<%= data.genero %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="correoestudiantil_e" value="<%= data.correoestudiantil_e %>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="contraseña" value="" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Edit Student
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include partials/_footer %>

@@ -1,0 +1,84 @@
+<% include partials/_header %>
+
+<pre><%= data[0].documentoidentidad_e%></pre>
+
+<div class="container">
+    <div class="row-mt5">
+        <div class="col-md7">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Documento</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>genero</th>
+                        <th>Correo estudiantil</th>
+                        <th>Contraseña</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(data){
+                        <% for (var i=0; i<data.length; i++){ %>
+                            <tr>
+                                <td><%= (i+1) %></td>
+                                <td><%= data[i].documentoidentidad_e %></td>
+                                <td><%= data[i].nombrecompleto %></td>
+                                <td><%= data[i].correo_e %></td>
+                                <td><%= data[i].genero %></td>
+                                <td><%= data[i].correoestudiantil_e %></td>
+                                <td><%= data[i].contraseña %></td>
+                                <td>
+                                    <a href="/delete/<%= data[i].id%>" class="btn btn-danger">Delete</a>
+                                    <a href="/update/<%= data[i].id%>" class="btn btn-info">Update</a>
+                                </td>
+                            </tr>
+                       <% } %>
+                    <% } %>
+                </tbody>
+
+            </table>
+        </div>
+            <div>
+                <div class="col-md5">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/add" method="post">
+                        <div class="form-group">
+                            <input type="text" name="documentoidentidad_e" placeholder="Documento de identidad" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="nombrecompleto" placeholder="Nombre completo" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="correo_e" placeholder="Correo personal" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="genero" placeholder="Género" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="correoestudiantil_e" placeholder="Correo estudiantil" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="contraseña" placeholder="Contraseña" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Save Student
+                        </button>
+
+                    </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<% include partials/_footer %>
